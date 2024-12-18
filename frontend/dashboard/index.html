@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; style-src 'unsafe-inline' 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'">
+    <meta name="keywords" content="tasks, highseas, hackclub, sorting, modern">
+    <meta name="description" content="A modern task sorting app, all in your browser!">
+    <meta name="author" content="Robert Zhao">
+    <meta name="og:title" content="Task Sorting App">
+    <meta name="og:description" content="A modern task sorting app, all in your browser!">
+
+    <script src="./script.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../output.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <title>Edifice - Task App</title>
+</head>
+<body class="bg-slate-950 font-inter">
+    <!--
+    Colors
+    primary: blue-500
+    error: red-500
+    warning: yellow-500
+    information: purple-500
+    -->
+    <div class="content flex flex-col">
+        <header class="sticky border-b border-slate-700 rounded-lg bg-slate-950 bg-opacity-70 backdrop-blur-md top-0 left-0">
+            <nav class="top-nav-bar w-[99vw] h-fit flex flex-row">
+                <div class="m-3 ml-5 flex">
+                    <a href="/" class="font-raleway text-blue-100 text-3xl my-auto select-none">edifice</a>
+                </div>
+                <div class="h-[25px] min-h-[1em] w-[3px] my-auto bg-gradient-to-r from-transparent via-slate-600 to-transparent opacity-100 mx-3"></div>
+                <div class="ml-2 flex">
+                    <div class="dropdown flex">
+                        <svg class="hamburger stroke-blue-100 hover:stroke-blue-500 active:stroke-blue-500 my-auto transition-colors duration-200 flex sm:hidden" width="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 6H20M4 12H20M4 18H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="absolute z-50 navmenu h-fit px-[15vw] py-5 sm:py-0 sm:px-0 top-[3.8rem] sm:top-0 -left-72 sm:left-40 bg-slate-950 border-slate-700 sm:border-none border-b border-r rounded-lg sm:bg-transparent duration-500">
+                        <ul class="flex flex-col sm:flex-row sm:gap-8 text-base">
+                            <li class="m-6 mt-0 sm:mt-5 mb-1 sm:text-base text-2xl mx-0 flex">
+                                <a href="/" class="navoptions text-blue-100 hover:text-blue-500 focus:text-blue-500 duration-200">Home</a>
+                            </li>
+                            <div class="sm:hidden flex w-[70px] min-w-[1em] h-[3px] my-auto bg-gradient-to-t from-transparent via-slate-600 to-transparent opacity-100 mx-0"></div>
+                            <li class="m-6 mt-5 mb-3 mx-0 sm:text-base text-2xl flex">
+                                <a href="/#features" class="navoptions text-blue-100 hover:text-blue-500 focus:text-blue-500 duration-200">Features</a>
+                            </li>
+                            <div class="sm:hidden flex w-[70px] min-w-[1em] h-[3px] my-auto bg-gradient-to-t from-transparent via-slate-600 to-transparent opacity-100 mx-0"></div>
+                            <li class="m-6 mt-5 mb-3 mx-0 sm:text-base text-2xl flex">
+                                <a href="../pricing" class="navoptions text-blue-100 hover:text-blue-500 focus:text-blue-500 duration-200">Pricing</a>
+                            </li>
+                            <div class="sm:hidden flex w-[70px] min-w-[1em] h-[3px] my-auto bg-gradient-to-t from-transparent via-slate-600 to-transparent opacity-100 mx-0"></div>
+                            <li class="m-6 mt-5 mb-3 mx-0 sm:text-base text-2xl flex">
+                                <a href="https://github.com/deR0R0/edifice-task-app" class="navoptions text-blue-100 hover:text-blue-500 focus:text-blue-500 duration-200">Github</a>
+                            </li>
+                            <div class="sm:hidden flex w-[70px] min-w-[1em] h-[3px] my-auto bg-gradient-to-t from-transparent via-slate-600 to-transparent opacity-100 mx-0"></div>
+                            <li class="m-6 mt-5 mb-3 mx-0 sm:text-base text-2xl flex">
+                                <a href="https://github.com/deR0R0/edifice-task-app" class="navoptions text-blue-100 hover:text-blue-500 focus:text-blue-500 duration-200">Contact</a>
+                            </li>
+                            <div class="sm:hidden flex w-[70px] min-w-[1em] h-[3px] my-auto bg-gradient-to-t from-transparent via-slate-600 to-transparent opacity-100 mx-0"></div>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="flex flex-col mx-auto text-blue-100 mt-36 mb-44 [&_div]:mb-3">
+           <h1>App is still in development!</h1>
+        </div>
+        <footer class="mt-24 max-w-full w-full text-center sm:text-left h-[25rem] sm:h-[20rem] bg-slate-900 text-blue-100 flex flex-col sm:flex-row text-sm">
+            <div class="flex flex-col mx-auto h-fit w-fit mt-5">
+                <span class="text-slate-400 mb-1">Contributors</span>
+                <ul class="[&_li]:mb-1">
+                    <li><a href="https://github.com/deR0R0">Robert Zhao (owner)</a></li>
+                    <li>Contribute on Github ☺️</li>
+                </ul>
+            </div>
+            <div class="flex flex-col mx-auto h-fit w-fit mt-5">
+                <span class="text-slate-400 mb-1">Terms/Policies</span>
+                <ul class="[&_li]:mb-1">
+                    <li><a href="../tos">Terms of Service</a></li>
+                    <li><a href="../privacy">Privacy Policy</a></li>
+                    <li><a href="../credit">Icons Credit</a></li>
+                    <li>License: MIT</li>
+                </ul>
+            </div>
+            <div class="flex flex-col mx-auto h-fit w-fit mt-5">
+                <span class="text-slate-400 mb-1">Links</span>
+                <ul class="[&_li]:mb-1">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="./pricing">Pricing</a></li>
+                    <li><a href="https://github.com/deR0R0/edifice-task-app">Github</a></li>
+                    <li><a href="./contact">Contact</a></li>
+                    <li><a href="./dashboard">Dashboard</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
