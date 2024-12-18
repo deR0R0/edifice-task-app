@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; style-src 'unsafe-inline' 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'">
+    <meta name="keywords" content="tasks, highseas, hackclub, sorting, modern">
+    <meta name="description" content="A modern task sorting app, all in your browser!">
+    <meta name="author" content="Robert Zhao">
+    <meta name="og:title" content="Task Sorting App">
+    <meta name="og:description" content="A modern task sorting app, all in your browser!">
+
+    <script src="./script.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../output.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <title>Edifice - Task App</title>
+</head>
+<body class="bg-slate-950 font-inter">
+    <!--
+    Colors
+    primary: blue-500
+    error: red-500
+    warning: yellow-500
+    information: purple-500
+    -->
+    <div class="content flex flex-col">
+        <header class="sticky border-b border-slate-700 rounded-lg bg-slate-950 bg-opacity-70 backdrop-blur-md top-0 left-0">
+            <nav class="top-nav-bar w-[99vw] h-fit flex flex-row">
+                <div class="m-3 ml-5 flex">
+                    <a href="/" class="font-raleway text-blue-100 text-3xl my-auto select-none">edifice</a>
+                </div>
+                <div class="h-[25px] min-h-[1em] w-[3px] my-auto bg-gradient-to-r from-transparent via-slate-600 to-transparent opacity-100 mx-3"></div>
+                <div class="ml-2 flex">
+                    <div class="dropdown flex">
+                        <svg class="hamburger stroke-blue-100 hover:stroke-blue-500 active:stroke-blue-500 my-auto transition-colors duration-200 flex sm:hidden" width="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 6H20M4 12H20M4 18H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="absolute z-50 navmenu h-fit px-[15vw] py-5 sm:py-0 sm:px-0 top-[3.8rem] sm:top-0 -left-72 sm:left-40 bg-slate-950 border-slate-700 sm:border-none border-b border-r rounded-lg sm:bg-transparent duration-500">
+                        <ul class="flex flex-col sm:flex-row sm:gap-8 text-base">
+                            <li class="m-6 mt-0 sm:mt-5 mb-1 sm:text-base text-2xl mx-0 flex">
+                                <a href="/" class="navoptions text-blue-100 hover:text-blue-500 focus:text-blue-500 duration-200">Home</a>
+                            </li>
+                            <div class="sm:hidden flex w-[70px] min-w-[1em] h-[3px] my-auto bg-gradient-to-t from-transparent via-slate-600 to-transparent opacity-100 mx-0"></div>
+                            <li class="m-6 mt-5 mb-3 mx-0 sm:text-base text-2xl flex">
+                                <a href="/#features" class="navoptions text-blue-100 hover:text-blue-500 focus:text-blue-500 duration-200">Features</a>
+                            </li>
+                            <div class="sm:hidden flex w-[70px] min-w-[1em] h-[3px] my-auto bg-gradient-to-t from-transparent via-slate-600 to-transparent opacity-100 mx-0"></div>
+                            <li class="m-6 mt-5 mb-3 mx-0 sm:text-base text-2xl flex">
+                                <a href="../pricing" class="navoptions text-blue-100 hover:text-blue-500 focus:text-blue-500 duration-200">Pricing</a>
+                            </li>
+                            <div class="sm:hidden flex w-[70px] min-w-[1em] h-[3px] my-auto bg-gradient-to-t from-transparent via-slate-600 to-transparent opacity-100 mx-0"></div>
+                            <li class="m-6 mt-5 mb-3 mx-0 sm:text-base text-2xl flex">
+                                <a href="https://github.com/deR0R0/edifice-task-app" class="navoptions text-blue-100 hover:text-blue-500 focus:text-blue-500 duration-200">Github</a>
+                            </li>
+                            <div class="sm:hidden flex w-[70px] min-w-[1em] h-[3px] my-auto bg-gradient-to-t from-transparent via-slate-600 to-transparent opacity-100 mx-0"></div>
+                            <li class="m-6 mt-5 mb-3 mx-0 sm:text-base text-2xl flex">
+                                <a href="https://github.com/deR0R0/edifice-task-app" class="navoptions text-blue-100 hover:text-blue-500 focus:text-blue-500 duration-200">Contact</a>
+                            </li>
+                            <div class="sm:hidden flex w-[70px] min-w-[1em] h-[3px] my-auto bg-gradient-to-t from-transparent via-slate-600 to-transparent opacity-100 mx-0"></div>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="text-blue-100 mx-auto mt-12">
+            <span class="text-4xl">Select Your Plan</span>
+        </div>
+        <div class="flex flex-col lg:flex-row mx-auto sm:mb-3 mb-24 mt-10 text-blue-100 sm:[&_div]:mx-1">
+            <div class="flex flex-col w-[22rem] h-[37rem] bg-slate-950 border-2 border-slate-700 rounded-3xl animate-fade-in-2 sm:mb-0 mb-5">
+                <div class="flex flex-col">
+                    <span class="text-xl bg-blue-500 w-fit p-5 m-3 py-2 rounded-3xl font-bold">Starter</span>
+                    <span class="text-lg m-3 font-mono">Best plan for individuals that just need a simple app.</span>
+                </div>
+                <div class="flex flex-row m-3 mt-10 border-b border-slate-700">
+                    <span class="text-5xl font-inter ml-3">$0.00</span>
+                    <span class="text-base font-inter m-6 ml-3 text-slate-500"> / month</span>
+                </div>
+                <div class="flex flex-col m-3 mt-0">
+                    <ul class="m-3 [&_li]:mb-3 [&_li]:flex [&_li]:flex-row">
+                        <li class="text-base">
+                            <svg class="stroke-blue-100 mr-2" width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 5L12 14L9 11M16 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Unlimited Tasks
+                        </li>
+                        <li class="text-base">
+                            <svg class="stroke-blue-100 mr-2" width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 5L12 14L9 11M16 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Unlimited Tags
+                        </li>
+                        <li class="text-base">
+                            <svg class="stroke-blue-100 mr-2" width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 5L12 14L9 11M16 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Unlimited Categories
+                        </li>
+                        <li class="text-base">
+                            <svg class="stroke-blue-100 mr-2" width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 5L12 14L9 11M16 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Unlimited Labels
+                        </li>
+                        <li class="text-base">
+                            <svg class="stroke-blue-100 mr-2" width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 5L12 14L9 11M16 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Unlimited Reminders
+                        </li>
+                        <li class="text-base">
+                            <svg class="stroke-blue-100 mr-2" width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 5L12 14L9 11M16 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Unlimited Subtasks
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col">
+                    <a href="../dashboard" class="flex mx-auto text-center bg-slate-950 border-2 border-blue-500 rounded-xl w-[20rem] h-[3rem] hover:bg-blue-500 focus:bg-blue-500 hover:shadow-[0px_0px_15px_0px_#3b82f6] duration-300">
+                        <span class="mx-auto my-auto">Get Started</span>
+                    </a>
+                </div>
+            </div>
+            <div class="flex flex-col w-[22rem] h-[37rem] bg-slate-950 border-2 border-slate-700 rounded-3xl animate-fade-in-1 sm:mb-0 mb-5">
+                <div class="flex flex-col">
+                    <div class="flex flex-row">
+                        <span class="text-xl bg-blue-500 w-fit p-5 m-3 py-2 rounded-3xl font-bold">Personal</span>
+                        <div title="Popular Pick" class="flex flex-row ml-auto">
+                            <svg class="stroke-blue-500" width="45px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 3L14.0357 8.16153C14.2236 8.63799 14.3175 8.87622 14.4614 9.0771C14.5889 9.25516 14.7448 9.41106 14.9229 9.53859C15.1238 9.68245 15.362 9.77641 15.8385 9.96432L21 12L15.8385 14.0357C15.362 14.2236 15.1238 14.3175 14.9229 14.4614C14.7448 14.5889 14.5889 14.7448 14.4614 14.9229C14.3175 15.1238 14.2236 15.362 14.0357 15.8385L12 21L9.96432 15.8385C9.77641 15.362 9.68245 15.1238 9.53859 14.9229C9.41106 14.7448 9.25516 14.5889 9.0771 14.4614C8.87622 14.3175 8.63799 14.2236 8.16153 14.0357L3 12L8.16153 9.96432C8.63799 9.77641 8.87622 9.68245 9.0771 9.53859C9.25516 9.41106 9.41106 9.25516 9.53859 9.0771C9.68245 8.87622 9.77641 8.63799 9.96432 8.16153L12 3Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <span class="text-lg m-3 font-mono">Some extra features on top of the starter plan!</span>
+                </div>
+                <div class="flex flex-row m-3 mt-10 border-b border-slate-700">
+                    <span class="text-5xl font-inter ml-3">$0.00</span>
+                    <span class="text-base font-inter m-6 ml-3 text-slate-500"> / month</span>
+                </div>
+                <div class="flex flex-col m-3 mt-0">
+                    <ul class="m-3 [&_li]:mb-3 [&_li]:flex [&_li]:flex-row">
+                        <li class="text-base">
+                            <svg class="stroke-blue-100 mr-2" width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 5L12 14L9 11M16 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Unlimited Tasks
+                        </li>
+                        <li class="text-base">
+                            <svg class="stroke-blue-100 mr-2" width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 5L12 14L9 11M16 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Unlimited Tags
+                        </li>
+                        <li class="text-base">
+                            <svg class="stroke-blue-100 mr-2" width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 5L12 14L9 11M16 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Unlimited Categories
+                        </li>
+                        <li class="text-base">
+                            <svg class="stroke-blue-100 mr-2" width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 5L12 14L9 11M16 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Unlimited Labels
+                        </li>
+                        <li class="text-base">
+                            <svg class="stroke-blue-100 mr-2" width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 5L12 14L9 11M16 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Unlimited Reminders
+                        </li>
+                        <li class="text-base">
+                            <svg class="stroke-blue-100 mr-2" width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 5L12 14L9 11M16 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Unlimited Subtasks
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col">
+                    <a href="../dashboard" class="flex mx-auto text-center bg-slate-950 border-2 border-blue-500 rounded-xl w-[20rem] h-[3rem] hover:bg-blue-500 focus:bg-blue-500 hover:shadow-[0px_0px_15px_0px_#3b82f6] duration-300">
+                        <span class="mx-auto my-auto">Get Started</span>
+                    </a>
+                </div>
+            </div>
+            <div class="flex flex-col w-[22rem] h-[37rem] bg-slate-950 border-2 border-slate-700 rounded-3xl animate-fade-in-2 sm:mb-0 mb-5">
+                <div class="flex flex-col">
+                    <span class="text-xl bg-blue-500 w-fit p-5 m-3 py-2 rounded-3xl font-bold">Industry</span>
+                    <span class="text-lg m-3 font-mono">Literally the plans are the exact same o_o</span>
+                </div>
+                <div class="flex flex-row m-3 mt-10 border-b border-slate-700">
+                    <span class="text-5xl font-inter ml-3">$0.00</span>
+                    <span class="text-base font-inter m-6 ml-3 text-slate-500"> / month</span>
+                </div>
+                <div class="flex flex-col m-3 mt-0">
+                    <ul class="m-3 [&_li]:mb-3 [&_li]:flex [&_li]:flex-row">
+                        <li class="text-base">
+                            <svg class="stroke-blue-100 mr-2" width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 5L12 14L9 11M16 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Unlimited Tasks
+                        </li>
+                        <li class="text-base">
+                            <svg class="stroke-blue-100 mr-2" width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 5L12 14L9 11M16 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Unlimited Tags
+                        </li>
+                        <li class="text-base">
+                            <svg class="stroke-blue-100 mr-2" width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 5L12 14L9 11M16 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Unlimited Categories
+                        </li>
+                        <li class="text-base">
+                            <svg class="stroke-blue-100 mr-2" width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 5L12 14L9 11M16 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Unlimited Labels
+                        </li>
+                        <li class="text-base">
+                            <svg class="stroke-blue-100 mr-2" width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 5L12 14L9 11M16 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Unlimited Reminders
+                        </li>
+                        <li class="text-base">
+                            <svg class="stroke-blue-100 mr-2" width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 5L12 14L9 11M16 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Unlimited Subtasks
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col">
+                    <a href="../dashboard" class="flex mx-auto text-center bg-slate-950 border-2 border-blue-500 rounded-xl w-[20rem] h-[3rem] hover:bg-blue-500 focus:bg-blue-500 hover:shadow-[0px_0px_15px_0px_#3b82f6] duration-300">
+                        <span class="mx-auto my-auto">Get Started</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="text-slate-500 mx-auto">
+            <a href="../bruh" class="text-xs">But.. I can't afford this >_<</a>
+        </div>
+        <div class="flex mx-auto text-blue-100 mt-24 hover:underline">
+            <a href="https://github.com/deR0R0/edifice-task-app" class="text-3xl flex flex-row">
+                But Seriously, Support Me with a ⭐️
+                <svg class="stroke-blue-100 ml-2" width="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 9L21 3M21 3H15M21 3L13 11M10 5H7.8C6.11984 5 5.27976 5 4.63803 5.32698C4.07354 5.6146 3.6146 6.07354 3.32698 6.63803C3 7.27976 3 8.11984 3 9.8V16.2C3 17.8802 3 18.7202 3.32698 19.362C3.6146 19.9265 4.07354 20.3854 4.63803 20.673C5.27976 21 6.11984 21 7.8 21H14.2C15.8802 21 16.7202 21 17.362 20.673C17.9265 20.3854 18.3854 19.9265 18.673 19.362C19 18.7202 19 17.8802 19 16.2V14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+        <footer class="mt-24 max-w-full w-full text-center sm:text-left h-[25rem] sm:h-[20rem] bg-slate-900 text-blue-100 flex flex-col sm:flex-row text-sm">
+            <div class="flex flex-col mx-auto h-fit w-fit mt-5">
+                <span class="text-slate-400 mb-1">Contributors</span>
+                <ul class="[&_li]:mb-1">
+                    <li><a href="https://github.com/deR0R0">Robert Zhao (owner)</a></li>
+                    <li>Contribute on Github ☺️</li>
+                </ul>
+            </div>
+            <div class="flex flex-col mx-auto h-fit w-fit mt-5">
+                <span class="text-slate-400 mb-1">Terms/Policies</span>
+                <ul class="[&_li]:mb-1">
+                    <li><a href="../tos">Terms of Service</a></li>
+                    <li><a href="../privacy">Privacy Policy</a></li>
+                    <li><a href="../credit">Icons Credit</a></li>
+                    <li>License: MIT</li>
+                </ul>
+            </div>
+            <div class="flex flex-col mx-auto h-fit w-fit mt-5">
+                <span class="text-slate-400 mb-1">Links</span>
+                <ul class="[&_li]:mb-1">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="./pricing">Pricing</a></li>
+                    <li><a href="https://github.com/deR0R0/edifice-task-app">Github</a></li>
+                    <li><a href="./contact">Contact</a></li>
+                    <li><a href="./dashboard">Dashboard</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
